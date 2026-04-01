@@ -27,7 +27,7 @@ setInterval(nextSlide, 9000);
 
 document.querySelector(".mouse").addEventListener("click", () => {
   window.scrollBy({
-    top: 500,
+    top: 600,
     behavior: "smooth"
   });
 });
