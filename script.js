@@ -1,3 +1,5 @@
+// hero slider
+
 const slides = document.querySelectorAll(".slide");
 let index = 0;
 
@@ -20,3 +22,12 @@ document.querySelector(".next").addEventListener("click", nextSlide);
 document.querySelector(".prev").addEventListener("click", prevSlide);
 
 setInterval(nextSlide, 9000);
+
+// mouse icon to next section
+
+document.querySelector(".mouse").addEventListener("click", () => {
+  window.scrollBy({
+    top: 500,
+    behavior: "smooth"
+  });
+});

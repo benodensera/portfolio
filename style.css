@@ -24,6 +24,10 @@ html, body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 nav .logo img {
     height: 25px;
 }
@@ -35,8 +39,8 @@ nav {
     top: 0;
     width: 100%;
     gap: 2rem;
-    padding: 1.5rem 3rem;
-    z-index: 10;
+    padding: 3rem 4.5rem;
+    z-index: 9999;
 }
 
 .menu-nav {
@@ -192,11 +196,11 @@ h1 {
 }
 
 .prev {
-    left: 20px;
+    left: 3.5rem;
 }
 
 .next {
-    right: 20px;
+    right: 3.5rem;
 }
 
 .next img {
@@ -216,6 +220,33 @@ h1 {
     z-index: 1;
 }
 
+.mouse {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+
+.mouse-icon {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+    cursor: pointer;
+}
+
+.mouse-icon:hover {
+    fill: var(--main-color);
+}
+
+.mouse-icon {
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(9px); }
+}
 
 
 
