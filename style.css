@@ -623,4 +623,84 @@ h3 {
     }
 }
 
+/* clients section */
 
+.clients {
+    padding: 80px 0;
+    background: #F5F6FA;
+    overflow: hidden;
+}
+
+.clients-container {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.clients-main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.clients-main h1 {
+    font-size: 2rem;
+}
+
+.carousel-arrows svg:first-child {
+    transform: scaleX(-1);
+}
+
+.carousel {
+    overflow: hidden;
+    cursor: grab;
+}
+
+.carousel.active {
+    cursor: grabbing;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.carousel-item {
+    display: flex;
+    flex: 0 0 calc((100% - 90px) / 4);
+    height: 190px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.carousel-item img:hover {
+    opacity: 1;
+}
+
+/* carousel responsive styles */
+
+@media (max-width: 1024px) {
+    .carousel-item {
+        flex: 0 0 calc((100% - 60px) / 3);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 calc((100% - 30px) / 2);
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+}

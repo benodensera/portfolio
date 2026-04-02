@@ -23,6 +23,8 @@ document.querySelector(".prev").addEventListener("click", prevSlide);
 
 setInterval(nextSlide, 9000);
 
+
+
 // mouse icon to next section
 
 document.querySelector(".mouse").addEventListener("click", () => {
@@ -31,6 +33,8 @@ document.querySelector(".mouse").addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+
 
 // projects grid 
 
@@ -56,6 +60,7 @@ filters.forEach(btn => {
 
   });
 });
+
 
 
 // counter animation function
@@ -93,3 +98,188 @@ const observer = new IntersectionObserver(entries => {
 counters.forEach(counter => {
   observer.observe(counter);
 });
+
+
+
+// carousel control arrows
+
+const prevArrow = document.querySelector(".carousel-arrows svg:first-child");
+const nextArrow = document.querySelector(".carousel-arrows svg:last-child");
+
+prevArrow.addEventListener("click", () => {
+  stopAutoSlide();          // pause autoplay
+  carouselIndex--;          // move left
+  slideToIndex();           // update position
+  startAutoSlide();         // resume autoplay
+});
+
+nextArrow.addEventListener("click", () => {
+  stopAutoSlide();          // pause autoplay
+  carouselIndex++;          // move right
+  slideToIndex();           // update position
+  startAutoSlide();         // resume autoplay
+});
+
+
+
+// clients carousel
+
+const carouselTrack = document.querySelector(".carousel-track");
+const carouselWrapper = document.querySelector(".carousel");
+
+let carouselItems = document.querySelectorAll(".carousel-item");
+
+let carouselIndex = 4;
+let isDragging = false;
+let startX = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let autoSlide;
+
+// prevent image drag  
+
+document.querySelectorAll(".carousel-item img").forEach(img => {
+  img.setAttribute("draggable", "false");
+});
+
+// carousel item clones
+
+function setupCarousel() {
+  const itemsArray = Array.from(carouselItems);
+
+  const firstClones = itemsArray.slice(0, 4);
+  const lastClones = itemsArray.slice(-4);
+
+  lastClones.forEach(item => {
+    const clone = item.cloneNode(true);
+    carouselTrack.prepend(clone);
+  });
+
+  firstClones.forEach(item => {
+    const clone = item.cloneNode(true);
+    carouselTrack.append(clone);
+  });
+
+  carouselItems = document.querySelectorAll(".carousel-item");
+
+  currentTranslate = -carouselIndex * getItemWidth();
+  prevTranslate = currentTranslate;
+  setPosition();
+}
+
+function getItemWidth() {
+  return carouselItems[0].getBoundingClientRect().width + 30;
+}
+
+// carousel auto slide
+
+function startAutoSlide() {
+  autoSlide = setInterval(() => moveNext(), 3000);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlide);
+}
+
+function moveNext() {
+  carouselIndex++;
+  slideToIndex();
+}
+
+function slideToIndex() {
+  carouselTrack.style.transition = "transform 0.5s ease";
+
+  currentTranslate = -carouselIndex * getItemWidth();
+  prevTranslate = currentTranslate;
+
+  setPosition();
+}
+
+// loop fix
+
+carouselTrack.addEventListener("transitionend", () => {
+  const total = carouselItems.length;
+
+  if (carouselIndex >= total - 4) {
+    carouselTrack.style.transition = "none";
+    carouselIndex = 4;
+  }
+
+  if (carouselIndex < 4) {
+    carouselTrack.style.transition = "none";
+    carouselIndex = total - 8;
+  }
+
+  currentTranslate = -carouselIndex * getItemWidth();
+  prevTranslate = currentTranslate;
+
+  setPosition();
+});
+
+// drag horizontally only
+
+carouselWrapper.addEventListener("mousedown", startDrag);
+carouselWrapper.addEventListener("mouseup", endDrag);
+carouselWrapper.addEventListener("mouseleave", endDrag);
+carouselWrapper.addEventListener("mousemove", drag);
+
+carouselWrapper.addEventListener("touchstart", startDrag);
+carouselWrapper.addEventListener("touchend", endDrag);
+carouselWrapper.addEventListener("touchmove", drag);
+
+function startDrag(e) {
+  isDragging = true;
+  carouselWrapper.classList.add("active");
+
+  startX = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+
+  stopAutoSlide();
+}
+
+function drag(e) {
+  if (!isDragging) return;
+
+  const currentX = e.type.includes("mouse")
+    ? e.pageX
+    : e.touches[0].clientX;
+
+  const moveX = currentX - startX;
+
+  // only horizontal movement
+
+  currentTranslate = prevTranslate + moveX;
+
+  setPosition();
+}
+
+function endDrag() {
+  if (!isDragging) return;
+
+  isDragging = false;
+  carouselWrapper.classList.remove("active");
+
+  const movedBy = currentTranslate - prevTranslate;
+
+  // snap one item at a time 
+
+  if (movedBy < -50) {
+    carouselIndex++;
+  } else if (movedBy > 50) {
+    carouselIndex--;
+  }
+
+  slideToIndex();
+  startAutoSlide();
+}
+
+function setPosition() {
+  carouselTrack.style.transform = `translateX(${currentTranslate}px)`;
+}
+
+// init 
+
+setupCarousel();
+startAutoSlide();
+
+
+
