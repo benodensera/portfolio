@@ -31,3 +31,28 @@ document.querySelector(".mouse").addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+// projects grid 
+
+const filters = document.querySelectorAll(".filter");
+const items = document.querySelectorAll(".item");
+
+filters.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    // active button
+    filters.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+
+    items.forEach(item => {
+      if (filter === "all" || item.classList.contains(filter)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+  });
+});
