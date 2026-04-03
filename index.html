@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <!-- hero section -->
     <section class="hero">
         <div class="hero-container">
@@ -260,7 +261,7 @@
         <div class="clients-container">
             <div class="clients-main">
                 <h3>Our Clients</h3>
-                <h1>We cherish and respect our clients & partners. <br>Every project is a labor of love!</h1>
+                <h1>We Value Our Clients & Partners.<br>Every Project Matters!</h1>
                 <div class="carousel-arrows">
                     <svg class="icon-arrow" viewBox="0 0 1560 1560" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -307,7 +308,131 @@
             </div>
         </div>
     </section>
+    <!-- video section -->
+    <section class="video-section">
+        <div class="video-bg">
+        </div>
+        <div class="video-content">
+            <div class="video-play" id="playBtn">
+                <div class="play-icon">
+                    <svg viewBox="0 0 24 24" width="80" height="80">
+                        <path fill="#fff"
+                            d="M12 24C5.4 24 0 18.6 0 12S5.4 0 12 0s12 5.4 12 12-5.4 12-12 12zm0-23C5.9 1 1 5.9 1 12s4.9 11 11 11 11-4.9 11-11S18.1 1 12 1z" />
+                        <path fill="#fff"
+                            d="M12 18.4c-3.5 0-6.4-2.9-6.4-6.4S8.5 5.6 12 5.6s6.4 2.9 6.4 6.4-2.9 6.4-6.4 6.4zm-.9-8.7v4.4l3.1-2.1z" />
+                    </svg>
+                </div>
+            </div>
+            <h1>
+                We're a team of <br>
+                talented developers & designers
+            </h1>
+        </div>
+        <!-- service boxes -->
+        <div class="services-boxes">
+            <div class="service-card">
+                <span class="number">01.</span>
+                <h4>Market Research and Concept Design</h4>
+                <p>It all starts with an idea… and research.</p>
+            </div>
+            <div class="service-card">
+                <span class="number">02.</span>
+                <h4>Development & Programming</h4>
+                <p>Premium design meets solid execution.</p>
+            </div>
+            <div class="service-card">
+                <span class="number">03.</span>
+                <h4>Testing & Support</h4>
+                <p>We support every project 100%.</p>
+            </div>
+        </div>
+    </section>
+    <!-- fullscreen video overlay -->
+    <div class="video-overlay" id="videoOverlay">
+        <div class="video-modal">
+            <div class="close-video" id="closeVideo">✕</div>
+            <video id="videoPlayer" src="./videos/agency.mp4" controls></video>
+        </div>
+    </div>
+    <!-- testimonial section -->
+    <section class="testimonial-section">
+        <div class="testimonial-container">
+            <div class="arrow arrow-left" id="prevBtn">
+                <svg class="icon-arrow" viewBox="0 0 1560 1560" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1524 811.8H36c-17.7 0-32-14.3-32-32s14.3-32 32-32h1410.7l-194.2-194.2c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l248.9 248.9c9.2 9.2 11.9 22.9 6.9 34.9-5 11.9-16.7 19.7-29.6 19.7z" />
+                    <path
+                        d="M1274.8 1061c-8.2 0-16.4-3.1-22.6-9.4-12.5-12.5-12.5-32.8 0-45.3l249.2-249.2c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-249.2 249.2c-6.3 6.3-14.5 9.4-22.7 9.4z" />
+                </svg>
+            </div>
+            <div class="testimonial-viewport">
+                <!-- testimonial slider -->
+                <div class="testimonial-slider" id="slider">
+                    <div class="testimonial-card">
+                        <div class="avatar">
+                            <img src="https://i.pravatar.cc/90?img=3" alt="">
+                        </div>
+                        <p class="review">
+                            It was nice working with your creative team. I look forward to doing more
+                            interesting projects in the future. Great experience overall.
+                        </p>
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 512 512" class="quote-icon-svg">
+                                <path
+                                    d="M217.602 0H12.8C5.73 0 0 5.73 0 12.8v204.802c0 7.066 5.73 12.796 12.8 12.796h166.15c.25 76.801-56.41 128-114.95 128-7.07 0-12.8 5.73-12.8 12.801v25.602c0 7.07 5.73 12.8 12.8 12.8 76.762 0 166.398-51.203 166.398-179.203V12.801c0-7.07-5.73-12.801-12.796-12.801zM499.2 0H294.397c-7.066 0-12.796 5.73-12.796 12.8v204.802c0 7.066 5.73 12.796 12.796 12.796h166.153c.25 76.801-56.414 128-114.95 128-7.07 0-12.8 5.73-12.8 12.801v25.602c0 7.07 5.73 12.8 12.8 12.8 76.762 0 166.399-51.203 166.399-179.203V12.801C512 5.73 506.27 0 499.2 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="name">Romeo Garcia</h4>
+                        <span class="role">Developer</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="avatar">
+                            <img src="https://i.pravatar.cc/90?img=5" alt="">
+                        </div>
+                        <p class="review">
+                            Amazing service and very professional execution. The team delivered beyond
+                            expectations and communication was always clear and fast.
+                        </p>
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 512 512" class="quote-icon-svg">
+                                <path
+                                    d="M217.602 0H12.8C5.73 0 0 5.73 0 12.8v204.802c0 7.066 5.73 12.796 12.8 12.796h166.15c.25 76.801-56.41 128-114.95 128-7.07 0-12.8 5.73-12.8 12.801v25.602c0 7.07 5.73 12.8 12.8 12.8 76.762 0 166.398-51.203 166.398-179.203V12.801c0-7.07-5.73-12.801-12.796-12.801zM499.2 0H294.397c-7.066 0-12.796 5.73-12.796 12.8v204.802c0 7.066 5.73 12.796 12.796 12.796h166.153c.25 76.801-56.414 128-114.95 128-7.07 0-12.8 5.73-12.8 12.801v25.602c0 7.07 5.73 12.8 12.8 12.8 76.762 0 166.399-51.203 166.399-179.203V12.801C512 5.73 506.27 0 499.2 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="name">Sofia Martinez</h4>
+                        <span class="role">Designer</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="avatar">
+                            <img src="https://i.pravatar.cc/90?img=8" alt="">
+                        </div>
+                        <p class="review">
+                            High quality work and attention to detail. I highly recommend them for any
+                            modern web project or digital experience.
+                        </p>
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 512 512" class="quote-icon-svg">
+                                <path
+                                    d="M217.602 0H12.8C5.73 0 0 5.73 0 12.8v204.802c0 7.066 5.73 12.796 12.8 12.796h166.15c.25 76.801-56.41 128-114.95 128-7.07 0-12.8 5.73-12.8 12.801v25.602c0 7.07 5.73 12.8 12.8 12.8 76.762 0 166.398-51.203 166.398-179.203V12.801c0-7.07-5.73-12.801-12.796-12.801zM499.2 0H294.397c-7.066 0-12.796 5.73-12.796 12.8v204.802c0 7.066 5.73 12.796 12.796 12.796h166.153c.25 76.801-56.414 128-114.95 128-7.07 0-12.8 5.73-12.8 12.801v25.602c0 7.07 5.73 12.8 12.8 12.8 76.762 0 166.399-51.203 166.399-179.203V12.801C512 5.73 506.27 0 499.2 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="name">Daniel Cruz</h4>
+                        <span class="role">Product Manager</span>
+                    </div>
+                </div>
+            </div>
+            <div class="arrow arrow-right" id="nextBtn">
+                <svg class="icon-arrow" viewBox="0 0 1560 1560" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1524 811.8H36c-17.7 0-32-14.3-32-32s14.3-32 32-32h1410.7l-194.2-194.2c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l248.9 248.9c9.2 9.2 11.9 22.9 6.9 34.9-5 11.9-16.7 19.7-29.6 19.7z" />
+                    <path
+                        d="M1274.8 1061c-8.2 0-16.4-3.1-22.6-9.4-12.5-12.5-12.5-32.8 0-45.3l249.2-249.2c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-249.2 249.2c-6.3 6.3-14.5 9.4-22.7 9.4z" />
+                </svg>
+            </div>
+        </div>
+    </section>
 
+    <!-- script link -->
     <script src="script.js"></script>
 
 </body>

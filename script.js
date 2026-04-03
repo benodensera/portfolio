@@ -174,7 +174,7 @@ function getItemWidth() {
 // carousel auto slide
 
 function startAutoSlide() {
-  autoSlide = setInterval(() => moveNext(), 3000);
+  autoSlide = setInterval(() => moveNext(), 3500);
 }
 
 function stopAutoSlide() {
@@ -283,3 +283,59 @@ startAutoSlide();
 
 
 
+// video control
+
+const playBtn = document.getElementById("playBtn");
+const overlay = document.getElementById("videoOverlay");
+const video = document.getElementById("videoPlayer");
+const closeBtn = document.getElementById("closeVideo");
+
+// OPEN
+playBtn.addEventListener("click", () => {
+  overlay.style.display = "flex";
+  video.currentTime = 0;
+  video.play();
+});
+
+// CLOSE
+closeBtn.addEventListener("click", () => {
+  overlay.style.display = "none";
+  video.pause();
+});
+
+// OPTIONAL: close clicking outside
+overlay.addEventListener("click", (e) => {
+  if (e.target === overlay) {
+    overlay.style.display = "none";
+    video.pause();
+  }
+});
+
+
+
+// testimonial slider
+
+const slider = document.getElementById("slider");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+let testimonialIndex = 0;
+const totalSlides = document.querySelectorAll(".testimonial-card").length;
+
+function updateSlider() {
+  slider.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+}
+
+// next button
+nextBtn.addEventListener("click", () => {
+  testimonialIndex++;
+  if (testimonialIndex >= totalSlides) testimonialIndex = 0;
+  updateSlider();
+});
+
+// previous button
+prevBtn.addEventListener("click", () => {
+  testimonialIndex--;
+  if (testimonialIndex < 0) testimonialIndex = totalSlides - 1;
+  updateSlider();
+});
