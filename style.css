@@ -1265,7 +1265,7 @@ h3 {
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 18px;
+    font-size: 15px;
     color: var(--main-color);
 }
 
@@ -1300,8 +1300,13 @@ h3 {
     outline: none;
 }
 
-.newsletter-form input::placeholder{
+.newsletter-form input::placeholder {
     color: #b8bdc8;
+}
+
+.newsletter-form input:focus::placeholder {
+    opacity: 0.3;
+    transition: 0.3s ease;
 }
 
 /* fix browser autofill background & overlay */
@@ -1317,15 +1322,15 @@ h3 {
     font-family: 'Roboto', sans-serif !important;
 }
 
-.newsletter-form{
+.newsletter-form {
     position: relative;
 }
 
-.send-btn{
+.send-btn {
     z-index: 10;
 }
 
-.send-icon{
+.send-icon {
     pointer-events: none;
 }
 
