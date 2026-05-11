@@ -329,14 +329,16 @@ h3 {
     padding: 3rem 4.5rem;
 }
 
-.about h3 {
+.about h3,
+.testimonial-top h3 {
     font-weight: 500;
     letter-spacing: 1.5px;
     color: var(--text-gray);
     margin: 0 0 15px 0;
 }
 
-.about h1 {
+.about h1,
+.testimonial-top h1 {
     text-align: center;
     font-size: 3rem;
     color: var(--tertiary-color);
@@ -344,12 +346,13 @@ h3 {
     margin: 0;
 }
 
-.about hr {
+.about hr,
+.testimonial-top hr {
     height: 3px;
     width: 40px;
     background: var(--secondary-color);
     border: none;
-    margin: 30px 0;
+    margin: 30px auto;
 }
 
 .about p {
@@ -897,9 +900,20 @@ h3 {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 140px;
+    margin-top: 250px;
     padding: 200px 20px 120px;
     z-index: 1;
+}
+
+/* top content - above testimonial slider */
+
+.testimonial-top {
+    position: absolute;
+    text-align: center;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
 .testimonial-container {
@@ -933,13 +947,7 @@ h3 {
     border-radius: 50%;
 }
 
-.quote-icon {
-    height: 40px;
-    width: 40px;
-    margin: 20px auto;
-}
-
-.quote-icon-svg {
+.quote-icon svg {
     height: 15px;
     width: 15px;
     fill: var(--main-color);
@@ -1234,7 +1242,7 @@ h3 {
 .footer-line {
     width: 60%;
     height: 1px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.21);
     margin: 9px 0;
 }
 
@@ -1294,7 +1302,7 @@ h3 {
     font-family: 'Roboto', sans-serif;
     color: #b8bdc8;
     border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-bottom: 1px solid rgba(255,255,255,0.21);
     padding: 0 55px 14px 0;
     background: transparent;
     outline: none;
@@ -1382,7 +1390,7 @@ h3 {
     flex-wrap: wrap;
     margin-top: 90px;
     padding-top: 35px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(255,255,255,0.21);
     gap: 30px;
 }
 
