@@ -289,25 +289,49 @@ const playBtn = document.getElementById("playBtn");
 const overlay = document.getElementById("videoOverlay");
 const video = document.getElementById("videoPlayer");
 const closeBtn = document.getElementById("closeVideo");
+const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-// OPEN
+// open
 playBtn.addEventListener("click", () => {
   overlay.style.display = "flex";
+
+  // block scroll 
+  document.documentElement.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
+
+  // hide back to top 
+  scrollTopBtn.style.opacity = "0";
+  scrollTopBtn.style.visibility = "hidden";
+  scrollTopBtn.style.pointerEvents = "none";
+
   video.currentTime = 0;
   video.play();
 });
 
-// CLOSE
-closeBtn.addEventListener("click", () => {
-  overlay.style.display = "none";
-  video.pause();
-});
+// close function
 
-// OPTIONAL: close clicking outside
+function closeVideoOverlay() {
+  overlay.style.display = "none";
+
+  // scroll restore
+  document.documentElement.style.overflow = "";
+  document.body.style.overflow = "";
+
+  // back to top restore
+  scrollTopBtn.style.opacity = "";
+  scrollTopBtn.style.visibility = "";
+  scrollTopBtn.style.pointerEvents = "";
+
+  video.pause();
+}
+
+closeBtn.addEventListener("click", closeVideoOverlay);
+
+// close on click outside
+
 overlay.addEventListener("click", (e) => {
   if (e.target === overlay) {
-    overlay.style.display = "none";
-    video.pause();
+    closeVideoOverlay();
   }
 });
 

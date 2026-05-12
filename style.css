@@ -7,7 +7,17 @@
     --main-color: #6FB72F;
     --secondary-color: #0167da;
     --tertiary-color: #222A35;
+
     --background-filter: rgba(34, 42, 53, 0.774);
+    --overlay:
+        linear-gradient(to bottom,
+            rgba(34, 42, 53, 0.82) 0%,
+            rgba(34, 42, 53, 0.58) 22%,
+            rgba(34, 42, 53, 0.42) 55%,
+            rgba(34, 42, 53, 0.70) 100%),
+        linear-gradient(to right,
+            rgba(0, 0, 0, 0.14),
+            rgba(0, 0, 0, 0));
 
     --main-shadow: 0 4px 12px rgba(0, 0, 0, 0.064);
     --main-shadow-transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
@@ -283,7 +293,7 @@ h3 {
     content: "";
     position: absolute;
     inset: 0;
-    background: var(--background-filter);
+    background: var(--overlay);
     z-index: 1;
 }
 
@@ -792,6 +802,7 @@ h3 {
 .carousel {
     overflow: hidden;
     cursor: grab;
+    touch-action: pan-y;
 }
 
 .carousel.active {
@@ -820,8 +831,20 @@ h3 {
     transition: 0.3s;
 }
 
-.carousel-item img:hover {
-    opacity: 1;
+/* prevent image selection - blue overlay */
+
+.carousel,
+.carousel-track,
+.carousel-item,
+.carousel-item img {
+    -webkit-user-select: none;
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+.carousel-item img {
+    pointer-events: none;
 }
 
 /* carousel responsive styles */
@@ -974,7 +997,7 @@ h3 {
     display: none;
     align-items: center;
     justify-content: center;
-    background: var(--background-filter);
+    background: var(--overlay);
     inset: 0;
     z-index: 9999;
 }
