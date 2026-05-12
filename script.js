@@ -339,3 +339,24 @@ prevBtn.addEventListener("click", () => {
   if (testimonialIndex < 0) testimonialIndex = totalSlides - 1;
   updateSlider();
 });
+
+
+
+// scroll to top button
+
+const btn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 2000) {
+        btn.classList.add("show");
+    } else {
+        btn.classList.remove("show");
+    }
+});
+
+btn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});

@@ -10,8 +10,8 @@
     --background-filter: rgba(34, 42, 53, 0.774);
 
     --main-shadow: 0 4px 12px rgba(0, 0, 0, 0.064);
-    --main-shadow-transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), 
-                              opacity 0.3s ease;
+    --main-shadow-transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s ease;
 
     --text-gray: #929ca8;
     --text-gray-footer: #b8bdc8;
@@ -204,6 +204,7 @@ h3 {
         transform: translateY(25%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -269,11 +270,11 @@ h3 {
     right: 3.5rem;
 }
 
-.next img {
+.next svg {
     transform: scaleX(-1);
 }
 
-.slider-controls img {
+.slider-controls svg {
     width: 30px;
     height: 30px;
 }
@@ -312,10 +313,12 @@ h3 {
 }
 
 @keyframes bounce {
+
     0%,
     100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(9px);
     }
@@ -415,10 +418,6 @@ h3 {
     transform: scale(1);
 }
 
-.widget-icon:hover + .widget-icon-wrap::after {
-    animation: radar 0.3s ease-out forwards;
-}
-
 .widget-icon-wrap:hover::after {
     animation: radar 0.3s ease-out forwards;
 }
@@ -428,6 +427,7 @@ h3 {
         opacity: 1;
         transform: scale(0.5);
     }
+
     100% {
         opacity: 0;
         transform: scale(1);
@@ -474,8 +474,8 @@ h3 {
     margin: 0;
     fill: var(--tertiary-color);
     transition:
-                transform .5s ease,
-                opacity .5s ease;
+        transform .5s ease,
+        opacity .5s ease;
 }
 
 .arrow-1 {
@@ -545,7 +545,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
 }
 
 .filters {
@@ -701,6 +701,43 @@ h3 {
     height: 120px;
 }
 
+.icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* radarSec base */
+
+.icon::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--secondary-color);
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1);
+}
+
+.icon:hover::after {
+    animation: radarSec 0.3s ease-out forwards;
+}
+
+@keyframes radarSec {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
 /* stats section responsive styles */
 
 @media (max-width: 768px) {
@@ -708,6 +745,7 @@ h3 {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
     .stats-bottom {
         grid-template-columns: 1fr;
     }
@@ -971,8 +1009,9 @@ h3 {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 250px;
+    margin-top: 15rem;
     padding: 200px 20px 120px;
+    isolation: isolate;
     z-index: 1;
 }
 
@@ -1026,6 +1065,7 @@ h3 {
 
 .review {
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #555;
     margin: 20px 0;
@@ -1104,7 +1144,7 @@ h3 {
     font-size: 15px;
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--text-gray);    
+    color: var(--text-gray);
     font-weight: 700;
     gap: 14px;
     transition: 0.3s ease;
@@ -1211,6 +1251,7 @@ h3 {
     .news-grid {
         grid-template-columns: 1fr;
     }
+
     .news-title h2 {
         font-size: 42px;
     }
@@ -1220,16 +1261,20 @@ h3 {
     .news-section {
         padding: 70px 25px;
     }
+
     .news-header {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .news-title h2 {
         font-size: 36px;
     }
+
     .news-content {
         padding: 28px;
     }
+
     .news-content h3 {
         font-size: 24px;
     }
@@ -1288,6 +1333,7 @@ h3 {
 
 .phone-icon {
     width: 15px;
+    height: 24px;
     fill: var(--text-gray-footer);
 }
 
@@ -1304,8 +1350,8 @@ h3 {
 .footer-line {
     width: 60%;
     height: 1px;
-    background: rgba(255,255,255,0.21);
-    margin: 9px 0 21px 0;
+    background: rgba(255, 255, 255, 0.21);
+    margin: 9px 0 18px 0;
 }
 
 .footer-col h3 {
@@ -1364,7 +1410,7 @@ h3 {
     font-family: 'Roboto', sans-serif;
     color: #b8bdc8;
     border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.21);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.21);
     padding: 0 55px 14px 0;
     background: transparent;
     outline: none;
@@ -1433,7 +1479,7 @@ h3 {
     transition: 0.3s ease;
 }
 
-.send-btn:hover .send-icon path{
+.send-btn:hover .send-icon path {
     stroke: var(--main-color);
 }
 
@@ -1452,7 +1498,7 @@ h3 {
     flex-wrap: wrap;
     margin-top: 90px;
     padding-top: 35px;
-    border-top: 1px solid rgba(255,255,255,0.21);
+    border-top: 1px solid rgba(255, 255, 255, 0.21);
     gap: 30px;
 }
 
@@ -1515,10 +1561,72 @@ h3 {
     fill: var(--main-color);
 }
 
+/* scroll to top button */
 
+.scroll-top {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 21px;
+    bottom: 21px;
+    width: 30px;
+    height: 30px;
+    background: var(--main-color);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999999;
+    overflow: hidden;
+    transform: translateY(25px);
+    transition:
+        opacity 0.25s ease,
+        transform 1s ease,
+        visibility 0.25s;
+}
 
+/* scroll to top visible */
 
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 
+/* scroll icons */
 
+.scroll-icon-1,
+.scroll-icon-2 {
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: #fff;
+    transform-origin: center;
+    transition:
+        transform 0.45s ease,
+        opacity 0.45s ease,
+        fill 0.3s ease;
+}
 
+.scroll-icon-1 {
+    opacity: 1;
+    transform: translateY(0) rotate(90deg);
+}
 
+.scroll-icon-2 {
+    opacity: 0;
+    transform: translateY(30px) rotate(90deg);
+}
+
+.scroll-top:hover .scroll-icon-1 {
+    opacity: 0;
+    transform: translateY(-30px) rotate(90deg);
+}
+
+.scroll-top:hover .scroll-icon-2 {
+    opacity: 1;
+    transform: translateY(0) rotate(90deg);
+}
