@@ -12,7 +12,7 @@
 <body>
 
     <!-- hero section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-container">
             <!-- static nav -->
             <nav>
@@ -201,7 +201,7 @@
         </div>
     </section>
     <!-- projects section -->
-    <section class="portfolio-section">
+    <section class="portfolio-section" id="portfolio">
         <div class="portfolio-main">
             <h3>Recent Projects</h3>
             <h1>Focused on<br>Design and Development</h1>
@@ -250,7 +250,7 @@
         </div>
     </section>
     <!-- stats section -->
-    <section class="stats">
+    <section class="stats" id="stats">
         <div class="stats-container">
             <!-- left side -->
             <div class="stat">
@@ -317,7 +317,7 @@
         </div>
     </section>
     <!-- clients section -->
-    <section class="clients">
+    <section class="clients" id="clients">
         <div class="clients-container">
             <div class="clients-main">
                 <h3>Our Clients</h3>
@@ -369,7 +369,7 @@
         </div>
     </section>
     <!-- video section -->
-    <section class="video-section">
+    <section class="video-section" id="video">
         <div class="video-bg">
         </div>
         <div class="video-content">
@@ -415,7 +415,7 @@
         </div>
     </div>
     <!-- testimonial section -->
-    <section class="testimonial-section">
+    <section class="testimonial-section" id="testimonials">
         <div class="testimonial-top">
             <h3>Reviews</h3>
             <h1>Our Clients' Feedback</h1>
@@ -497,7 +497,7 @@
         </div>
     </section>
     <!-- news section -->
-    <section class="news-section">
+    <section class="news-section" id="news">
         <div class="news-header">
             <div class="news-title">
                 <h3>Our Blog</h3>
@@ -655,7 +655,7 @@
         </a>
     </section>
     <!-- footer section -->
-    <footer class="main-footer">
+    <footer class="main-footer" id="footer">
         <div class="footer-top">
             <!-- column 1 -->
             <div class="footer-col footer-brand">
@@ -813,7 +813,8 @@
             </div>
         </div>
     </footer>
-
+    
+    <!-- back to top button -->
     <button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">
         <svg class="scroll-icon-1" xmlns="http://www.w3.org/2000/svg" version="1.1"
             xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 128 128"
@@ -834,6 +835,81 @@
             </g>
         </svg>
     </button>
+
+    <!-- floating navigation -->
+    <div class="floating-nav" id="floatingNav">
+        <!-- always visible -->
+        <a href="#hero" class="floating-icon floating-hero-icon active">
+            <!-- home/hero icon -->
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+        </a>
+        <a href="#aboutMe" class="floating-icon floating-about-icon">
+            <!-- user icon -->
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
+            </svg>
+        </a>
+        <!-- expand trigger -->
+        <div class="floating-icon floating-expand-icon" id="floatingExpandBtn">
+            <!-- arrow up & down -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+                <path d="M30 52L64 20L98 52" stroke="#fff" stroke-width="8" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M30 76L64 108L98 76" stroke="#fff" stroke-width="8" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+        <!-- expandable items -->
+        <div class="floating-expand-menu" id="floatingExpandMenu">
+            <!-- portfolio icon -->
+            <a href="#portfolio" class="floating-icon floating-portfolio-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 13h8V3H3v10zm10 8h8V3h-8v18zM3 21h8v-6H3v6z" />
+                </svg>
+            </a>
+            <!-- stats icon -->
+            <a href="#stats" class="floating-icon floating-stats-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 9h3v10H5zm5-4h3v14h-3zm5 7h3v7h-3z" />
+                </svg>
+            </a>
+            <!-- clients icon -->
+            <a href="#clients" class="floating-icon floating-clients-icon">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M16 11c1.7 0 3-1.3 3-3S17.7 5 16 5s-3 1.3-3 3 1.3 3 3 3zM8 11c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-2.3 0-7 1.2-7 3.5V20h14v-3.5C15 14.2 10.3 13 8 13zm8 0c-.3 0-.7 0-1 .1 1.2.9 2 2 2 3.4V20h6v-3.5c0-2.3-4.7-3.5-7-3.5z" />
+                </svg>
+            </a>
+            <!-- video icon -->
+            <a href="#video" class="floating-icon floating-video-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+            </a>
+            <!-- testimonials icon -->
+            <a href="#testimonials" class="floating-icon floating-testimonial-icon">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M21 6h-2v9H7v2c0 .6.4 1 1 1h9l4 4V7c0-.6-.4-1-1-1zM17 12V3c0-.6-.4-1-1-1H3c-.6 0-1 .4-1 1v14l4-4h10c.6 0 1-.4 1-1z" />
+                </svg>
+            </a>
+            <!-- news icon -->
+            <a href="#news" class="floating-icon floating-news-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 5h16v14H4zm2 2v2h12V7zm0 4v2h8v-2zm0 4v2h10v-2z" />
+                </svg>
+            </a>
+            <!-- footer icon -->
+            <a href="#footer" class="floating-icon floating-footer-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 4h16v12H4zm2 2v8h12V6zm-2 12h16v2H4z" />
+                </svg>
+            </a>
+        </div>
+    </div>
 
     <!-- script link -->
     <script src="script.js"></script>
