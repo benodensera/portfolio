@@ -878,9 +878,17 @@ h3 {
 
 .video-bg {
     position: absolute;
-    background: url("./images/hero-bkg-img-1.jpg") center/cover no-repeat;
+    background: url("./images/video-bkg.png") center/cover no-repeat;
     inset: 0;
     z-index: 0;
+}
+
+.video-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background: var(--overlay);
+    z-index: 1;
 }
 
 .video-content {
@@ -919,8 +927,8 @@ h3 {
 }
 
 .video-play:hover {
-    transform: scale(1.15);
-    transition: 0.3s ease;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
 }
 
 .services-boxes {
