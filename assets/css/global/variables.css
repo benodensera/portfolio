@@ -1,0 +1,46 @@
+/* root global */
+
+:root {
+
+    /* color & gradient structure */
+
+    --main-color: #6FB72F;
+    --secondary-color: #0167da;
+    --tertiary-color: #222A35;
+
+    --background-filter: rgba(34, 42, 53, 0.774);
+    --overlay:
+        linear-gradient(to bottom,
+            rgba(34, 42, 53, 0.82) 0%,
+            rgba(34, 42, 53, 0.58) 22%,
+            rgba(34, 42, 53, 0.42) 55%,
+            rgba(34, 42, 53, 0.70) 100%),
+        linear-gradient(to right,
+            rgba(0, 0, 0, 0.14),
+            rgba(0, 0, 0, 0));
+
+    --main-shadow: 0 4px 12px rgba(0, 0, 0, 0.064);
+    --main-shadow-transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s ease;
+
+    --text-gray: #929ca8;
+    --text-gray-footer: #b8bdc8;
+
+    --border-light:
+        1px solid rgba(255, 255, 255, 0.21);
+
+    --box-01-color: #F5F6FA;
+    --box-02-color: #0167da;
+    --box-03-color: #222A35;
+
+    /* z-index structure */
+
+    --z-base: 1;
+    --z-elevated: 100;
+    --z-nav: 1000;
+    --z-slider-controls: 2000;
+    --z-floating: 3000;
+    --z-overlay: 4000;
+    --z-modal: 5000;
+}

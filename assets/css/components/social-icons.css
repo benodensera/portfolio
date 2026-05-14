@@ -1,0 +1,28 @@
+/* social icons */
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.footer-social a svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+    fill: var(--text-gray-footer);
+    transition: fill 0.3s ease;
+}
+
+.footer-social a svg:hover {
+    fill: var(--main-color);
+}

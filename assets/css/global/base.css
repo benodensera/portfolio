@@ -1,0 +1,10 @@
+/* base styles */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--tertiary-color);
+}

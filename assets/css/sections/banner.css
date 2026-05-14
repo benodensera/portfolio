@@ -1,0 +1,21 @@
+/* banner */
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 90px 30px;
+    background: var(--secondary-color);
+    gap: 25px;
+}
+
+.banner h3,
+.banner h1,
+.banner a svg {
+    color: #fff;
+    fill: #fff;
+}
+
+.banner .banner-btn:hover .icon-arrow {
+    fill: var(--main-color);
+}

@@ -1,0 +1,29 @@
+/* flex utilities */
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* transitions */
+
+.transition-fast {
+    transition: 0.3s ease;
+}
+
+.transition-medium {
+    transition: 0.5s ease;
+}
+
+/* uppercase */
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* visibility */
+
+.hidden {
+    display: none;
+}

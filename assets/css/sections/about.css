@@ -1,0 +1,178 @@
+/* about section */
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 6rem auto;
+    padding: 3rem 4.5rem;
+}
+
+/* titles */
+
+.about h3,
+.testimonial-top h3 {
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: var(--text-gray);
+    margin: 0 0 15px 0;
+}
+
+.about h1,
+.testimonial-top h1 {
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    color: var(--tertiary-color);
+    margin: 0;
+}
+
+.about hr,
+.testimonial-top hr {
+    width: 40px;
+    height: 3px;
+    border: none;
+    margin: 30px auto;
+    background: var(--secondary-color);
+}
+
+.about p {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-gray);
+}
+
+/* widget container */
+
+.widget-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+/* widget */
+
+.widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    max-width: 500px;
+    padding: 1.5rem;
+}
+
+.widget h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--tertiary-color);
+}
+
+.widget p {
+    color: var(--text-gray);
+}
+
+/* widget icon */
+
+.widget-icon {
+    width: 50px;
+    height: 50px;
+    margin: 25px;
+    fill: var(--main-color);
+    cursor: pointer;
+}
+
+/* radar wrapper */
+
+.widget-icon-wrap {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* radar ring */
+
+.widget-icon-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1);
+}
+
+.widget-icon-wrap:hover::after {
+    animation: radar 0.3s ease-out forwards;
+}
+
+.icon-arrow {
+    height: 25px;
+    margin: 15px;
+    fill: var(--tertiary-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icon-arrow:hover {
+    fill: var(--main-color);
+}
+
+/* double arrow animation */
+
+.arrow-wrap {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+}
+
+.arrow-wrap svg {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    margin: 0;
+    fill: var(--tertiary-color);
+    transition:
+        transform .5s ease,
+        opacity .5s ease;
+}
+
+.arrow-1 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.arrow-2 {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.arrow-wrap:hover .arrow-1,
+.all-news-btn:hover .arrow-1,
+.news-card:hover .news-content .arrow-1 {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.arrow-wrap:hover .arrow-2,
+.all-news-btn:hover .arrow-2,
+.news-card:hover .news-content .arrow-2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.widget:hover .arrow-wrap svg {
+    fill: var(--main-color);
+}

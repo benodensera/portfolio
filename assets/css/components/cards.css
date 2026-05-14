@@ -1,0 +1,53 @@
+/* service boxes */
+
+.service-card {
+    flex: 1 1 0;
+    color: #fff;
+    text-align: left;
+    border-radius: 3px;
+    min-width: 0;
+    padding: 81px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card:nth-child(1) {
+    background: var(--box-01-color);
+}
+
+.service-card:nth-child(2) {
+    background: var(--box-02-color);
+}
+
+.service-card:nth-child(3) {
+    background: var(--box-03-color);
+}
+
+.service-card span {
+    font-size: 2.3rem;
+    color: var(--text-gray);
+    opacity: 0.6;
+}
+
+.service-card h4,
+.news-content h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.service-card:nth-child(1) h4 {
+    color: var(--tertiary-color);
+}
+
+.service-card p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.service-card:first-child p {
+    color: var(--text-gray);
+}

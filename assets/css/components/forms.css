@@ -1,0 +1,81 @@
+/* newsletter form */
+
+.newsletter-form {
+    position: relative;
+    width: 100%;
+}
+
+/* input */
+
+.newsletter-form input {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-gray-footer);
+    border: none;
+    border-bottom: var(--border-light);
+    padding: 0 55px 14px 0;
+    width: 100%;
+    background: transparent;
+    outline: none;
+}
+
+.newsletter-form input::placeholder {
+    color: var(--text-gray-footer);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--main-color);
+}
+
+.newsletter-form input:focus::placeholder {
+    opacity: 0.3;
+    transition: 0.3s ease;
+}
+
+/* autofill fix */
+
+.newsletter-form input:-webkit-autofill,
+.newsletter-form input:-webkit-autofill:hover,
+.newsletter-form input:-webkit-autofill:focus,
+.newsletter-form input:-webkit-autofill:active {
+    font-family: 'Roboto', sans-serif !important;
+    background: transparent !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: #fff !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* send button */
+
+.newsletter-form .send-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    top: 50%;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.send-icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+    pointer-events: none;
+}
+
+.send-icon path {
+    stroke: #fff;
+    transition: 0.3s ease;
+}
+
+.send-btn:hover .send-icon path {
+    stroke: var(--main-color);
+}
