@@ -19,6 +19,7 @@
 @import url('./components/social-icons.css');
 
 /* sections imports */
+/* index imports */
 
 @import url('./sections/hero.css');
 @import url('./sections/about.css');
@@ -30,6 +31,10 @@
 @import url('./sections/news.css');
 @import url('./sections/banner.css');
 @import url('./sections/footer.css');
+
+/* services imports */
+
+@import url('./sections/services.css');
 
 /* pages imports */
 
