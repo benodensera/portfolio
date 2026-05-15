@@ -86,16 +86,3 @@
 .icon:hover::after {
     animation: radarSec 0.3s ease-out forwards;
 }
-
-/* responsive */
-
-@media (max-width: 768px) {
-    .stats-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .stats-bottom {
-        grid-template-columns: 1fr;
-    }
-
-}

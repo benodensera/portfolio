@@ -82,23 +82,3 @@
 .carousel-item img {
     pointer-events: none;
 }
-
-/* responsive */
-
-@media (max-width: 1024px) {
-    .carousel-item {
-        flex: 0 0 calc((100% - 60px) / 3);
-    }
-}
-
-@media (max-width: 768px) {
-    .carousel-item {
-        flex: 0 0 calc((100% - 30px) / 2);
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-item {
-        flex: 0 0 100%;
-    }
-}
