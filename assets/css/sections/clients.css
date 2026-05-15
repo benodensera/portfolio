@@ -28,8 +28,6 @@
 .banner h1 {
     font-size: 2rem;
     font-weight: 600;
-    letter-spacing: 1px;
-    margin: 0;
 }
 
 .carousel-arrows svg:first-child {

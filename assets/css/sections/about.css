@@ -10,21 +10,9 @@
 
 /* titles */
 
-.about h3,
-.testimonial-top h3 {
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    color: var(--text-gray);
-    margin: 0 0 15px 0;
-}
-
 .about h1,
 .testimonial-top h1 {
     text-align: center;
-    font-size: 3rem;
-    letter-spacing: 1px;
-    color: var(--tertiary-color);
-    margin: 0;
 }
 
 .about hr,
